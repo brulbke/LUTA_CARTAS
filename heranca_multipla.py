@@ -1,0 +1,29 @@
+class Animal:
+    def __init__(self, nome) -> None:
+        self.nome = nome
+
+    def emitir_som(self):
+        pass
+
+class Mamifero(Animal):
+    def amamentar(self):
+        return f'{self.nome} está amamentando'
+    
+class Ave(Animal):
+    def voar(self):
+        return f'{self.nome} está voando'
+    
+class Morcego(Mamifero, Ave):
+    def emitir_som(self):
+        return f'emitindo o som ultrassonico'
+    
+morcego = Morcego(nome="Batman")
+
+# acessando métodos da classe base Animal
+
+print(f"O {morcego.nome} está {morcego.emitir_som()}")
+
+#acessando métodos das classes Mamifero e Ave
+
+print(f"{morcego.amamentar()}")
+print(f"{morcego.voar()}")
